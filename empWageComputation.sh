@@ -1,4 +1,17 @@
 #!/bin/bash
+function workhour() {
+	case $1 in
+	1)
+		echo 8
+		;;
+	2)
+		echo 4
+		;;
+	0)
+		echo 0
+		;;
+	esac
+}
 echo "Welcome to employee wage computation program"
 
 WagePerHour=20
@@ -15,11 +28,13 @@ attendance=$((RANDOM%3))
 case "$attendance" in
 1)
 	TotalDays=$(($TotalDays+1))
-	TotalHour=$(($TotalHour+8))
+	workHour=$( workhour 1)
+	TotalHour=$(($TotalHour+$workHour))
 	;;
 2)
 	TotalDays=$(($TotalDays+1))
-        TotalHour=$(($TotalHour+4))
+	workHour=$( workhour 2)
+        TotalHour=$(($TotalHour+$workHour))
 	;;
 0)
 	TotalDays=$(($TotalDays+1))
