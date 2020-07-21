@@ -1,0 +1,2 @@
+ cat access.log | awk '{print $7}' | sort -nr | uniq -c |sort -nr |head -4
+

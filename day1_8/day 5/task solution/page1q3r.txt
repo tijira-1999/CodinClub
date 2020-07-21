@@ -1,0 +1,2 @@
+awk '{print $9}' access.log | sort -nr | uniq -c | sort -gr | head -4
+

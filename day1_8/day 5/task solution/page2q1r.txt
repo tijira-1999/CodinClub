@@ -1,0 +1,7 @@
+awk '{if($4>10000)print $2,$7;}' data.csv
+
+awk '{if($3=="CAPTAIN") sum+=$7;}END{print sum;}' data.csv
+
+awk '{if($5>=7000 && $5<=10000)print $3,$5;}' data.csv
+
+awk '{sum+=$4;}END{printf"%f",sum/(NR-1)}' data.csv
